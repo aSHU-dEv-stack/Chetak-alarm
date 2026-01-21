@@ -1,0 +1,195 @@
+:root {
+    /* Chetak Electric Cyan/Green - bright and glowing */
+    --primary-color: #00ffd5;
+    /* A slightly darker version for gradients/hovers */
+    --primary-darker: #00d2aa;
+
+    /* Dark Mode Backgrounds */
+    --bg-color: #121212;
+    /* Very dark almost black background */
+    --card-bg: #1e1e24;
+    /* Slightly lighter dark gray for the card */
+    --input-bg: #2a2a35;
+    /* Dark input fields */
+
+    /* Text Colors */
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --border-color: #444444;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    /* Added a subtle dark gradient background for premium feel */
+    background-image: linear-gradient(to bottom right, #0a0a0a, #1a1a1a);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    /* A subtle electric cyan glow around the card */
+    box-shadow: 0 10px 40px rgba(0, 255, 213, 0.15);
+    width: 340px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* The lightning bolt color */
+.accent {
+    color: var(--primary-color);
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.time-inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    /* Dark input styling */
+    background-color: var(--input-bg);
+    border: 2px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-family: monospace;
+    /* Makes numbers look digital */
+}
+
+/* Styling the placeholder text in dark mode */
+input::placeholder {
+    color: #666;
+}
+
+/* Make the clock icon in the time input white so it's visible */
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* When you click an input, it glows with the Chetak green */
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 255, 213, 0.3);
+    outline: none;
+}
+
+.colon {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    /* Gradient button for a premium electric look */
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-darker));
+    color: #000;
+    /* Black text contrasts well with bright green */
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(0, 255, 213, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 255, 213, 0.5);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+#result {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#result.hidden {
+    display: none;
+}
+
+.result-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#alarm-time {
+    font-size: 3rem;
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    /* A strong glow effect on the final time */
+    text-shadow: 0 0 20px rgba(0, 255, 213, 0.6);
+    font-family: monospace;
+}
+
+#date-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

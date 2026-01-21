@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chetak Charging Alarm</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Chetak logo.jpg">
+</head>
+
+<body>
+
+    <div class="card">
+        <h1><span class="accent">⚡</span> Chetak Charging Calc</h1>
+        <p class="subtitle">Enter dashboard TTC value.</p>
+
+        <div class="input-group">
+            <label>TTC (Time Remaining)</label>
+            <div class="time-inputs">
+                <input type="number" id="ttc-hours" placeholder="Hrs" min="0">
+                <span class="colon">:</span>
+                <input type="number" id="ttc-minutes" placeholder="Mins" min="0" max="59">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Charging Started At</label>
+            <input type="time" id="start-time">
+        </div>
+
+        <button onclick="calculateAlarm()">CALCULATE UNPLUG TIME</button>
+
+        <div id="result" class="hidden">
+            <p class="result-label">UNPLUG AT:</p>
+            <h2 id="alarm-time">--:--</h2>
+            <p id="date-note"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
